@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+<title id="title">SORITECH INNOV BUSINESS</title><desc id="desc">Logo SIB bleu et orange avec motif technologique et slogan Innover, Connecter, Développer.</desc>
+<rect width="760" height="430" fill="#fff"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M420 80 C520 12 708 15 718 91 C721 122 700 157 665 190" stroke="#ff7800" stroke-width="17"/>
+<path d="M87 290 C20 315 12 369 83 389 C170 414 306 390 391 353" stroke="#ff7800" stroke-width="8"/>
+<path d="M102 310 C55 337 53 370 112 382 C190 397 293 376 390 345" stroke="#ff7800" stroke-width="7"/>
+<path d="M122 332 C88 351 93 374 140 380 C208 389 302 367 397 340" stroke="#ff7800" stroke-width="6"/>
+<path d="M135 354 H235 L270 326 H326" stroke="#ff7800" stroke-width="6"/>
+<path d="M99 391 C208 424 344 389 429 354" stroke="#0057b9" stroke-width="8"/>
+</g>
+<g fill="#0057b9"><path d="M93 117h205l-49 39H122c-24 0-36 14-36 32s13 31 37 31h125c56 0 85 28 85 69 0 42-32 70-87 70H187l51-39h-94c-55 0-89-35-89-91 0-66 46-111 138-111z"/><path d="M434 117h198c55 0 87 29 87 70 0 26-13 47-38 59 29 11 45 34 45 65 0 44-34 77-91 77H434v-39h194c27 0 41-13 41-35 0-21-14-33-41-33H434v-39h191c24 0 36-11 36-31 0-19-12-31-37-31H434z"/></g>
+<g fill="#ff7800"><path d="M366 116l44-27v54l-44 27z"/><path d="M366 184l44-27v158l-44 22z"/><circle cx="432" cy="87" r="12"/></g>
+<path d="M56 405H704" stroke="#0057b9" stroke-width="3"/>
+<text x="56" y="455" font-family="Arial,sans-serif" font-size="0"> </text>
+<text x="56" y="455" fill="#0057b9" font-family="Arial,sans-serif" font-size="0"> </text>
+<g font-family="Arial,sans-serif" font-weight="800" font-size="43"><text x="56" y="395" fill="#0057b9">SIB</text></g>
+</svg>
