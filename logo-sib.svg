@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+<title id="title">SORITECH INNOV BUSINESS</title><desc id="desc">Logo SIB bleu et orange, slogan Innover, Développer, Connecter</desc>
+<rect width="1200" height="650" fill="#fff"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M1010 58 C1125 5 1180 40 1120 185 C1098 235 1060 270 1020 300" stroke="#FF7800" stroke-width="18"/>
+<path d="M100 430 C45 400 65 330 180 290 M120 440 C65 395 100 345 225 315 L300 315 L350 280 L395 280 M155 445 C105 405 145 355 245 345 L315 345 L365 315 L410 315 M190 448 C155 415 180 375 260 370 L330 370" stroke="#FF7800" stroke-width="9"/>
+<path d="M110 465 C270 555 490 520 690 430" stroke="#0057B9" stroke-width="13"/>
+<path d="M180 290h30 M350 280h30 M410 315h18" stroke="#FF7800" stroke-width="8"/>
+</g>
+<g fill="#fff" stroke="#FF7800" stroke-width="8"><circle cx="180" cy="290" r="13"/><circle cx="395" cy="280" r="13"/><circle cx="428" cy="315" r="13"/></g>
+<path d="M150 155 H510 C585 155 625 200 625 265 C625 335 580 370 505 370 H365 L450 315 H505 C535 315 550 300 550 270 C550 245 535 230 505 230 H190 C160 230 145 245 145 270 C145 295 160 310 190 310 H290 L220 370 H150 C75 370 35 325 35 260 C35 195 75 155 150 155Z" fill="#0057B9" transform="translate(55 0) scale(.92 1)"/>
+<path d="M650 155 H965 C1040 155 1080 195 1080 255 C1080 295 1060 325 1025 340 C1070 355 1090 385 1090 425 C1090 485 1045 520 970 520 H650 V155Z" fill="#0057B9"/>
+<path d="M650 230 H955 C985 230 1000 242 1000 265 C1000 288 985 300 955 300 H650Z" fill="#fff"/>
+<path d="M650 365 H970 C1000 365 1015 380 1015 405 C1015 430 1000 445 970 445 H650Z" fill="#fff"/>
+<path d="M545 155 L615 115 V500 L545 535Z" fill="#FF7800"/><circle cx="615" cy="110" r="18" fill="#FF7800"/>
+<path d="M80 565 H1120" stroke="#0057B9" stroke-width="6"/>
+<text x="600" y="625" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="800" letter-spacing="1"><tspan fill="#0057B9">SORITECH </tspan><tspan fill="#FF7800">INNOV </tspan><tspan fill="#0057B9">BUSINESS</tspan></text>
+<text x="600" y="650" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" letter-spacing="4" fill="#0057B9">INNOVER  •  DÉVELOPPER  •  CONNECTER</text>
+</svg>
