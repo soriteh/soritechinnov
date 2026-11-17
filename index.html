@@ -60,6 +60,27 @@
 @keyframes footerGlow{to{transform:translate3d(65px,45px,0) scale(1.25)}}
 @media(prefers-reduced-motion:reduce){.section:before,.section:after,.trust:before,.footer:before,.footer:after{animation:none!important}}
 
+
+/* Signal réseau animé : impulsions qui circulent sur les liaisons */
+.network-signal{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.68}
+.network-signal svg{width:100%;height:100%;display:block}
+.signal-lines{fill:none;stroke:#55aaff;stroke-width:1.15;stroke-opacity:.22}
+.signal-lines .orange-line{stroke:#ff963c;stroke-opacity:.26}
+.signal-packets circle{fill:#8ed4ff;filter:drop-shadow(0 0 5px #52baff);opacity:0}
+.signal-packets circle:nth-child(3n){fill:#ff963c;filter:drop-shadow(0 0 6px #ff7800)}
+.signal-nodes circle{fill:#a6dfff;filter:drop-shadow(0 0 5px #55baff);animation:signalNode 2.5s ease-in-out infinite}
+.signal-nodes circle:nth-child(odd){fill:#ff963c;filter:drop-shadow(0 0 6px #ff7800);animation-delay:-1.2s}
+.signal-rings circle{fill:none;stroke:#62baff;stroke-width:1.2;opacity:0;transform-box:fill-box;transform-origin:center;animation:signalRipple 3.8s ease-out infinite}
+.signal-rings circle:nth-child(2n){stroke:#ff963c;animation-delay:-1.9s}
+@keyframes signalNode{0%,100%{opacity:.38;transform:scale(.75)}50%{opacity:1;transform:scale(1.55)}}
+@keyframes signalRipple{0%{opacity:.55;transform:scale(.35)}100%{opacity:0;transform:scale(2.8)}}
+@keyframes signalTravel{0%{opacity:0;offset-distance:0%}12%{opacity:1}88%{opacity:1}100%{opacity:0;offset-distance:100%}}
+.signal-packets .p1{offset-path:path("M 0 0 L 170 0 L 245 75 L 430 75 L 510 -5 L 690 -5");animation:signalTravel 6s linear infinite}
+.signal-packets .p2{offset-path:path("M 0 0 L 130 0 L 220 -90 L 390 -90 L 480 0 L 650 0");animation:signalTravel 7s linear infinite;animation-delay:-2.8s}
+.signal-packets .p3{offset-path:path("M 0 0 L 180 0 L 245 80 L 430 80 L 510 0 L 690 0");animation:signalTravel 8s linear infinite;animation-delay:-4s}
+@media(max-width:680px){.network-signal{opacity:.38}.signal-lines{stroke-width:1.6}}
+@media(prefers-reduced-motion:reduce){.signal-nodes circle,.signal-rings circle,.signal-packets circle{animation:none!important;opacity:.55}}
+
 </style>
 </head>
 <body>
@@ -70,7 +91,7 @@
 <a class="btn btn-primary" href="#contact">Demander un devis ↗</a><button class="menu" id="menu" aria-label="Ouvrir le menu">☰</button>
 </div></header>
 <main>
-<section class="hero" id="accueil"><div class="cyber-network" aria-hidden="true">
+<section class="hero" id="accueil"><div class="cyber-network" aria-hidden="true"><div class="network-signal" aria-hidden="true"><svg viewBox="0 0 1440 680" preserveAspectRatio="xMidYMid slice"><g class="signal-lines"><path d="M-20 155H175L250 230H430L510 150H690L770 230H960L1040 150H1240L1320 230H1460"/><path d="M-20 465H130L220 375H390L480 465H650L740 375H910L1000 465H1180L1270 375H1460"/><path class="orange-line" d="M180 -20V115L250 185V230M510 150V65L600 -20M770 230V325L740 375M1040 150V65L1130 -20M1000 465V560L1110 680"/></g><g class="signal-nodes"><circle cx="250" cy="230" r="4"/><circle cx="510" cy="150" r="4"/><circle cx="770" cy="230" r="4"/><circle cx="1040" cy="150" r="4"/><circle cx="220" cy="375" r="4"/><circle cx="740" cy="375" r="4"/><circle cx="1000" cy="465" r="4"/><circle cx="1270" cy="375" r="4"/></g><g class="signal-rings"><circle cx="250" cy="230" r="9"/><circle cx="770" cy="230" r="9"/><circle cx="1000" cy="465" r="9"/><circle cx="1270" cy="375" r="9"/></g><g class="signal-packets"><circle class="p1" cx="0" cy="0" r="3.5"/><circle class="p2" cx="0" cy="0" r="3.5"/><circle class="p3" cx="0" cy="0" r="3"/></g></svg></div>
 <svg viewBox="0 0 1440 680" preserveAspectRatio="xMidYMid slice">
 <defs><linearGradient id="netLine" x1="0" x2="1"><stop offset="0" stop-color="#0057B9" stop-opacity="0"/><stop offset=".5" stop-color="#63b8ff" stop-opacity=".8"/><stop offset="1" stop-color="#FF7800" stop-opacity=".35"/></linearGradient></defs>
 <g class="net-traces" fill="none" stroke="url(#netLine)" stroke-width="1.5">
