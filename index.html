@@ -192,6 +192,16 @@
 <footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="#accueil"><img class="sib-logo-footer" src="logo-sib.jpg" alt="Logo officiel SORITECH INNOV BUSINESS"></a><p>Des services informatiques et des solutions numériques pour accompagner vos ambitions.</p></div><div><h4>Navigation</h4><ul><li><a href="#apropos">À propos</a></li><li><a href="#services">Nos services</a></li><li><a href="#solutions">Solutions numériques</a></li><li><a href="#formations">Formations</a></li><li><a href="#partenaires">Ils nous font confiance</a></li></ul></div><div><h4>Nos expertises</h4><ul><li><a href="#services">Informatique</a></li><li><a href="#services">Réseaux & sécurité</a></li><li><a href="#solutions">Développement</a></li><li><a href="#services">Communication</a></li></ul></div><div><h4>Contact</h4><ul><li>Kipé, Ratoma, Conakry</li><li><a href="tel:+224624895298">+224 624 89 52 98</a></li><li><a href="tel:+224614138964">+224 614 13 89 64</a></li><li><a href="mailto:contact@soritechinnov.com">contact@soritechinnov.com</a></li></ul></div></div><div class="copyright"><span>© <span id="year"></span> SORITECH INNOV BUSINESS. Tous droits réservés.</span><span>INNOVER • DÉVELOPPER • CONNECTER</span></div></div></footer>
 <a class="whatsapp" href="https://wa.me/224624895298?text=Bonjour%20SIB%2C%20je%20souhaite%20avoir%20des%20informations." target="_blank" rel="noopener" aria-label="Contacter SIB sur WhatsApp">✆</a>
 <script>
+/* Une actualisation recharge toujours la page depuis son état initial */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+window.addEventListener('pageshow', () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  const mobileNav = document.getElementById('navlinks');
+  if (mobileNav) mobileNav.classList.remove('open');
+});
+</script>
+<script>
 const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 document.getElementById('year').textContent=new Date().getFullYear();
 /* Apparition progressive des contenus au défilement */
