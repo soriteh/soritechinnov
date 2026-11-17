@@ -203,6 +203,55 @@
  .hero h1 span{color:#ff963c;-webkit-text-fill-color:#ff963c}
 }
 
+
+/* Animation premium du titre principal de l'accueil */
+.hero-grid > .reveal h1{
+  opacity:0;
+  transform:translateY(24px);
+  animation:heroTitleEnter 1.05s cubic-bezier(.2,.75,.25,1) .18s forwards;
+}
+.hero-grid > .reveal h1 span{
+  display:inline-block;
+  background:linear-gradient(100deg,#ff963c 0%,#ffd2a8 28%,#fff 48%,#ff963c 68%,#ff7800 100%);
+  background-size:220% auto;
+  background-position:0% center;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 12px rgba(255,120,0,.16));
+  animation:ambitionShimmer 4.8s ease-in-out 1.1s infinite, ambitionFloat 3.8s ease-in-out 1.2s infinite;
+}
+.hero-grid > .reveal h1 span::after{
+  content:"";
+  display:block;
+  height:3px;
+  width:0;
+  margin-top:5px;
+  border-radius:4px;
+  background:linear-gradient(90deg,#ff7800,#ffd2a8,transparent);
+  box-shadow:0 0 13px rgba(255,120,0,.65);
+  animation:ambitionUnderline .85s ease-out 1.15s forwards;
+}
+@keyframes heroTitleEnter{
+  0%{opacity:0;transform:translateY(24px);filter:blur(7px)}
+  70%{opacity:1;filter:blur(0)}
+  100%{opacity:1;transform:translateY(0);filter:blur(0)}
+}
+@keyframes ambitionShimmer{
+  0%,100%{background-position:0% center}
+  50%{background-position:100% center}
+}
+@keyframes ambitionFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+@keyframes ambitionUnderline{to{width:100%}}
+@media(prefers-reduced-motion:reduce){
+ .hero-grid > .reveal h1,.hero-grid > .reveal h1 span,.hero-grid > .reveal h1 span::after{
+  animation:none!important;opacity:1!important;transform:none!important;filter:none!important;width:100%!important
+ }
+}
+
 </style>
 </head>
 <body>
