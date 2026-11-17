@@ -257,6 +257,24 @@
 .partner-logo-image{background-image:url('partners-sprite.webp')!important;background-size:400% 200%!important;background-repeat:no-repeat!important;background-color:#fff!important}
 .partner-logo-card{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.partners-track{animation:none}}
+
+/* Indicateurs clés SIB */
+.results-section{position:relative;isolation:isolate;overflow:hidden;padding:76px 0;background:linear-gradient(125deg,#071a36 0%,#0a2b53 62%,#073d70 100%);color:#fff}
+.results-section:before{content:"";position:absolute;z-index:-1;width:420px;height:420px;right:-150px;top:-230px;border-radius:50%;background:radial-gradient(circle,rgba(0,137,255,.28),transparent 68%)}
+.results-heading{text-align:center;max-width:680px;margin:0 auto 36px}
+.results-heading .kicker{color:#ffb477}
+.results-heading h2{font:800 clamp(25px,3vw,36px)/1.2 Manrope,sans-serif;letter-spacing:-1px;margin:10px 0 12px}
+.results-heading p{color:#c1d1e5;font-size:14px;line-height:1.7}
+.results-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.result-card{min-height:210px;padding:25px 20px;border:1px solid rgba(255,255,255,.15);border-radius:17px;background:rgba(255,255,255,.07);backdrop-filter:blur(9px);text-align:center;box-shadow:0 12px 35px rgba(0,0,0,.12);transition:transform .3s,border-color .3s,background .3s}
+.result-card:hover{transform:translateY(-6px);border-color:rgba(255,150,60,.65);background:rgba(255,255,255,.11)}
+.result-icon{width:42px;height:42px;margin:0 auto 12px;display:grid;place-items:center;border-radius:13px;background:rgba(255,120,0,.16);color:#ff963c;font-size:23px}
+.result-number{display:block;color:#ff963c;font:800 clamp(34px,4vw,46px)/1.1 Manrope,sans-serif;letter-spacing:-1.5px;font-variant-numeric:tabular-nums}
+.result-label{display:block;margin-top:8px;color:#fff;font:700 15px Manrope,sans-serif}
+.result-card small{display:block;margin:9px auto 0;max-width:240px;color:#bdcce0;font-size:11px;line-height:1.5}
+@media(max-width:680px){.results-section{padding:54px 0}.results-heading{margin-bottom:25px}.results-grid{grid-template-columns:1fr;gap:13px}.result-card{min-height:0;padding:20px 15px}.result-icon{margin-bottom:8px}.result-card small{margin-top:6px}}
+@media(prefers-reduced-motion:reduce){.result-card{transition:none}}
+
 </style>
 </head>
 <body>
@@ -281,6 +299,17 @@
 <div class="visual reveal"><div class="orb"><div class="orb-logo"><b>S</b><i>I</i><b>B</b></div></div><div class="float-card fc1">Solutions numériques<span>Web · Mobile · ERP</span></div><div class="float-card fc2">Réseaux & sécurité<span>Connectivité · Protection</span></div><div class="float-card fc3">Formation professionnelle<span>Compétences & évolution</span></div></div></div></section>
 <div class="trust"><div class="container trust-row"><span class="trust-label">Nos domaines d'intervention</span><span class="trust-item"><b>⌘</b> Informatique</span><span class="trust-item"><b>⌁</b> Réseaux</span><span class="trust-item"><b>▣</b> Développement</span><span class="trust-item"><b>✦</b> Formation</span><span class="trust-item"><b>◈</b> Communication</span></div></div>
 <section class="section" id="apropos"><div class="container about-grid"><div class="about-panel reveal"><span class="eyebrow">Qui sommes-nous ?</span><h3>La technologie pensée pour faire avancer vos projets.</h3><p>SIB met l'innovation et l'expertise informatique au service de vos objectifs, avec une approche fondée sur l'écoute, la qualité et la proximité.</p><div class="statline"><div><strong>6</strong><span>pôles de services</span></div><div><strong>1</strong><span>objectif : votre réussite</span></div></div></div><div class="about-copy reveal"><span class="kicker">À propos de SIB</span><h2>Un partenaire engagé dans votre transformation numérique.</h2><p>SORITECH INNOV BUSINESS est une entreprise orientée vers les technologies de l'information, le développement de solutions numériques, les services informatiques et la formation professionnelle.</p><p>Notre ambition est de rendre la technologie utile, accessible et performante pour accompagner la croissance des activités et le développement des compétences.</p><div class="about-points"><div class="point"><span class="check">✦</span> Écoute et proximité</div><div class="point"><span class="check">✦</span> Innovation utile</div><div class="point"><span class="check">✦</span> Qualité de service</div><div class="point"><span class="check">✦</span> Amélioration continue</div></div></div></div></section>
+
+<section class="results-section" id="chiffres">
+ <div class="container">
+  <div class="results-heading reveal"><span class="kicker">SIB en chiffres</span><h2>Des résultats qui témoignent de notre engagement.</h2><p>La confiance de nos clients et le développement des compétences au cœur de nos actions.</p></div>
+  <div class="results-grid">
+   <article class="result-card reveal"><div class="result-icon">♡</div><strong class="result-number" data-count="80" data-suffix="%">0%</strong><span class="result-label">Clients satisfaits</span><small>Un engagement constant pour la qualité de service</small></article>
+   <article class="result-card reveal"><div class="result-icon">♙</div><strong class="result-number" data-count="50" data-prefix="+" data-suffix="">+0</strong><span class="result-label">Personnes formées</span><small>Des compétences numériques développées</small></article>
+   <article class="result-card reveal"><div class="result-icon">▣</div><strong class="result-number" data-count="15" data-prefix="+" data-suffix="">+0</strong><span class="result-label">Projets réalisés</span><small>Des solutions concrètes mises en œuvre</small></article>
+  </div>
+ </div>
+</section>
 <section class="section soft" id="services"><div class="container"><div class="section-head center"><span class="kicker">Ce que nous faisons</span><h2>Des services conçus autour de vos besoins.</h2><p>Un ensemble de compétences complémentaires pour équiper, connecter, sécuriser et développer vos activités.</p></div><div class="cards">
 <article class="card reveal"><div class="iconbox">⌘</div><h3>Informatique & assistance</h3><p>Nous assurons le bon fonctionnement de votre parc informatique, du diagnostic à la maintenance, avec des équipements adaptés à vos usages.</p><ul class="service-details"><li>Diagnostic, dépannage et maintenance de PC</li><li>Installation de Windows et logiciels</li><li>Configuration, optimisation et sécurisation des postes</li><li>Fourniture d'ordinateurs et accessoires informatiques</li></ul><a class="more" href="#contact">Parler à un technicien →</a></article>
 <article class="card reveal"><div class="iconbox">⌁</div><h3>Réseaux & sécurité</h3><p>Nous concevons des infrastructures fiables pour connecter vos espaces, contrôler les accès et renforcer la sécurité de vos installations.</p><ul class="service-details"><li>Installation et configuration de réseaux LAN et Wi-Fi</li><li>Configuration MikroTik, routeurs et points d'accès</li><li>Déploiement de Hotspot et gestion des utilisateurs</li><li>Installation de caméras de vidéosurveillance CCTV</li></ul><a class="more" href="#contact">Sécuriser vos installations →</a></article>
@@ -323,6 +352,26 @@ window.addEventListener('pageshow', () => {
   const mobileNav = document.getElementById('navlinks');
   if (mobileNav) mobileNav.classList.remove('open');
 });
+
+/* Compteurs animés des indicateurs SIB */
+const countObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+ if(!entry.isIntersecting)return;
+ const el=entry.target;
+ if(el.dataset.done)return;
+ el.dataset.done="true";
+ const target=Number(el.dataset.count||0),prefix=el.dataset.prefix||"",suffix=el.dataset.suffix||"";
+ const duration=1500,start=performance.now();
+ const tick=now=>{
+  const progress=Math.min((now-start)/duration,1);
+  const eased=1-Math.pow(1-progress,3);
+  el.textContent=prefix+Math.round(target*eased)+suffix;
+  if(progress<1)requestAnimationFrame(tick);
+ };
+ requestAnimationFrame(tick);
+ countObserver.unobserve(el);
+}),{threshold:.45});
+document.querySelectorAll(".result-number").forEach(el=>countObserver.observe(el));
+
 </script>
 <script>
 const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
