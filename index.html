@@ -319,6 +319,18 @@
 @media(prefers-reduced-motion:reduce){.partners-track{animation:none}.partners-marquee{overflow-x:auto;mask-image:none}}
 
 
+
+/* Lisibilité renforcée des logos partenaires */
+.partner-logo-card{background:#fff!important}
+.partner-logo-image{
+  filter:brightness(1.22) contrast(1.18) saturate(1.12);
+  transform:scale(.96);
+  transform-origin:center;
+}
+.partner-logo-card:hover .partner-logo-image{
+  filter:brightness(1.26) contrast(1.2) saturate(1.16);
+}
+
 /* Logos partenaires : format compact pour limiter l'agrandissement du sprite */
 .partners-marquee{padding:12px 0 18px}
 .partners-track{gap:14px;animation:partnersScroll 48s linear infinite}
