@@ -395,6 +395,24 @@
 @media(max-width:600px){.catalog-grid{grid-template-columns:1fr}.catalog-card{padding:20px}.catalog-footer{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.catalog-card{transition:none}.catalog-card:hover{transform:none}}
 
+
+/* Phase 3 : formulaires de devis et d'inscription */
+.request-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+.request-card{padding:26px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:0 12px 34px rgba(7,26,54,.055)}
+.request-card h3{font:800 20px Manrope,sans-serif;color:var(--navy);margin:0 0 8px}
+.request-card>p{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 20px}
+.request-card .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.request-card .field{min-width:0}
+.request-card .field.full{grid-column:1/-1}
+.request-card label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.request-card input,.request-card select,.request-card textarea{width:100%;min-height:46px;border:1px solid #dce4ef;border-radius:9px;padding:11px 12px;font:500 13px Manrope,sans-serif;color:var(--navy);background:#fff;outline:none}
+.request-card textarea{min-height:104px;resize:vertical}
+.request-card input:focus,.request-card select:focus,.request-card textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,87,185,.09)}
+.request-card .form-note{font-size:11px;line-height:1.65;color:var(--muted);margin:13px 0 0}
+.request-heading{margin-bottom:26px}
+@media(max-width:760px){.request-grid{grid-template-columns:1fr}.request-card{padding:21px}}
+@media(max-width:430px){.request-card .form-grid{grid-template-columns:1fr}.request-card .field.full{grid-column:auto}}
+
 </style>
 </head>
 <body>
@@ -402,7 +420,7 @@
 <header class="header"><div class="container nav">
 <a class="brand" href="#accueil" aria-label="SIB accueil"><img class="sib-logo-header" src="logo-sib.jpg" alt="Logo officiel SORITECH INNOV BUSINESS"></a>
 <nav class="links" id="navlinks"><a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#services">Services</a><a href="#catalogue">Catalogue</a><a href="#solutions">Solutions</a><a href="#formations">Formations</a><a href="#realisations">Réalisations</a><a href="#partenaires">Partenaires</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
-<a class="btn btn-primary" href="#contact">Demander un devis ↗</a><button class="menu" id="menu" aria-label="Ouvrir le menu">☰</button>
+<a class="btn btn-primary" href="#devis">Demander un devis ↗</a><button class="menu" id="menu" aria-label="Ouvrir le menu">☰</button>
 </div></header>
 <main>
 <section class="hero" id="accueil"><div class="cyber-network" aria-hidden="true"><div class="network-signal" aria-hidden="true"><svg viewBox="0 0 1440 680" preserveAspectRatio="xMidYMid slice"><g class="signal-lines"><path d="M-20 155H175L250 230H430L510 150H690L770 230H960L1040 150H1240L1320 230H1460"/><path d="M-20 465H130L220 375H390L480 465H650L740 375H910L1000 465H1180L1270 375H1460"/><path class="orange-line" d="M180 -20V115L250 185V230M510 150V65L600 -20M770 230V325L740 375M1040 150V65L1130 -20M1000 465V560L1110 680"/></g><g class="signal-nodes"><circle cx="250" cy="230" r="4"/><circle cx="510" cy="150" r="4"/><circle cx="770" cy="230" r="4"/><circle cx="1040" cy="150" r="4"/><circle cx="220" cy="375" r="4"/><circle cx="740" cy="375" r="4"/><circle cx="1000" cy="465" r="4"/><circle cx="1270" cy="375" r="4"/></g><g class="signal-rings"><circle cx="250" cy="230" r="9"/><circle cx="770" cy="230" r="9"/><circle cx="1000" cy="465" r="9"/><circle cx="1270" cy="375" r="9"/></g><g class="signal-packets"><circle class="p1" cx="0" cy="0" r="3.5"/><circle class="p2" cx="0" cy="0" r="3.5"/><circle class="p3" cx="0" cy="0" r="3"/></g></svg></div>
@@ -452,7 +470,31 @@
 <div class="solution reveal"><div class="iconbox">◉</div><div><h3>Solutions réseau & Hotspot</h3><p>Gestion de la connectivité, accès Wi-Fi, équipements réseau et environnements MikroTik.</p></div></div>
 <div class="solution reveal"><div class="iconbox">▧</div><div><h3>Outils numériques sur mesure</h3><p>Automatisation et digitalisation de processus selon les besoins de votre organisation.</p></div></div>
 </div></div></section>
-<section class="section soft" id="formations"><div class="container"><div class="training reveal"><div><span class="eyebrow">Développez vos compétences</span><h2>Apprenez. Pratiquez. Progressez.</h2><p>SIB propose des formations orientées pratique pour renforcer vos compétences numériques et professionnelles.</p><div class="tags"><span class="tag">Windows & Pack Office</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">CorelDRAW</span><span class="tag">InDesign</span><span class="tag">Canva</span><span class="tag">WordPress</span><span class="tag">Développement Full-stack</span><span class="tag">MikroTik</span><span class="tag">Tap-touche</span></div><a class="btn btn-primary" href="#contact">Demander le programme ↗</a></div><div class="training-art"><div><strong>01</strong> Bureautique & productivité</div><div><strong>02</strong> Design graphique</div><div><strong>03</strong> Web & développement</div><div><strong>04</strong> Réseaux & systèmes</div></div></div></div></section>
+<section class="section soft" id="formations"><div class="container"><div class="training reveal"><div><span class="eyebrow">Développez vos compétences</span><h2>Apprenez. Pratiquez. Progressez.</h2><p>SIB propose des formations orientées pratique pour renforcer vos compétences numériques et professionnelles.</p><div class="tags"><span class="tag">Windows & Pack Office</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">CorelDRAW</span><span class="tag">InDesign</span><span class="tag">Canva</span><span class="tag">WordPress</span><span class="tag">Développement Full-stack</span><span class="tag">MikroTik</span><span class="tag">Tap-touche</span></div><a class="btn btn-primary" href="#inscription">S’inscrire à une formation ↗</a></div><div class="training-art"><div><strong>01</strong> Bureautique & productivité</div><div><strong>02</strong> Design graphique</div><div><strong>03</strong> Web & développement</div><div><strong>04</strong> Réseaux & systèmes</div></div></div></div></section>
+
+<section class="section soft" id="demandes"><div class="container">
+<div class="section-head center request-heading"><span class="kicker">Vos démarches en ligne</span><h2>Concrétisons votre besoin.</h2><p>Transmettez votre demande de devis ou votre souhait d'inscription. Votre message sera préparé dans WhatsApp pour être envoyé à notre équipe.</p></div>
+<div class="request-grid">
+<form class="request-card reveal" id="quoteForm"><span id="devis" class="form-anchor" aria-hidden="true"></span><h3>Demander un devis</h3><p>Présentez votre besoin pour permettre à notre équipe de mieux préparer votre proposition.</p><div class="form-grid">
+<div class="field"><label for="quoteName">Nom complet *</label><input id="quoteName" name="name" required autocomplete="name" placeholder="Votre nom"></div>
+<div class="field"><label for="quotePhone">Téléphone *</label><input id="quotePhone" name="phone" required autocomplete="tel" placeholder="+224 ..."></div>
+<div class="field"><label for="quoteEmail">E-mail</label><input id="quoteEmail" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com"></div>
+<div class="field"><label for="quoteOrg">Organisation</label><input id="quoteOrg" name="organization" placeholder="Entreprise (facultatif)"></div>
+<div class="field full"><label for="quoteService">Prestation souhaitée *</label><select id="quoteService" name="service" required><option value="">Choisir une prestation</option><option>Assistance & équipements informatiques</option><option>Réseaux, Wi-Fi & vidéosurveillance</option><option>Développement web, mobile & ERP</option><option>Formation professionnelle</option><option>Communication & impression</option><option>Conseil & accompagnement</option><option>Autre besoin</option></select></div>
+<div class="field full"><label for="quoteDetails">Description du besoin *</label><textarea id="quoteDetails" name="details" required placeholder="Décrivez le contexte, les besoins et les résultats attendus..."></textarea></div>
+<div class="field full"><button class="btn btn-primary" type="submit">Préparer ma demande sur WhatsApp ↗</button></div>
+</div><p class="form-note">Les champs marqués * sont obligatoires. Aucune donnée n'est enregistrée sur le site : l'envoi final se fait dans WhatsApp après votre validation.</p></form>
+<form class="request-card reveal" id="enrollForm"><span id="inscription" class="form-anchor" aria-hidden="true"></span><h3>Inscription à une formation</h3><p>Indiquez la formation qui vous intéresse. SIB vous recontactera pour les prochaines modalités.</p><div class="form-grid">
+<div class="field"><label for="enrollName">Nom complet *</label><input id="enrollName" name="name" required autocomplete="name" placeholder="Votre nom"></div>
+<div class="field"><label for="enrollPhone">Téléphone *</label><input id="enrollPhone" name="phone" required autocomplete="tel" placeholder="+224 ..."></div>
+<div class="field full"><label for="enrollEmail">E-mail</label><input id="enrollEmail" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com"></div>
+<div class="field full"><label for="enrollCourse">Formation souhaitée *</label><select id="enrollCourse" name="course" required><option value="">Sélectionner une formation</option><option>Windows & Pack Office</option><option>Photoshop, Illustrator & CorelDRAW</option><option>InDesign & Canva</option><option>WordPress</option><option>Développement Full-stack</option><option>Réseaux informatiques & MikroTik</option><option>Tap-touche</option></select></div>
+<div class="field"><label for="enrollLevel">Niveau actuel</label><select id="enrollLevel" name="level"><option>Débutant</option><option>Intermédiaire</option><option>Avancé</option><option>À évaluer</option></select></div>
+<div class="field"><label for="enrollAvailability">Disponibilité</label><select id="enrollAvailability" name="availability"><option>À convenir</option><option>Matin</option><option>Après-midi</option><option>Soir</option><option>Week-end</option></select></div>
+<div class="field full"><label for="enrollMessage">Précisions (facultatif)</label><textarea id="enrollMessage" name="message" placeholder="Vos objectifs ou questions..."></textarea></div>
+<div class="field full"><button class="btn btn-primary" type="submit">Préparer mon inscription sur WhatsApp ↗</button></div>
+</div><p class="form-note">Cette demande ne confirme pas une place ni une date de session. L'équipe SIB vous communiquera les modalités. Aucune donnée n'est enregistrée sur le site.</p></form>
+</div></div></section>
 <section class="section" id="realisations"><div class="container"><div class="section-head center"><span class="kicker">Portfolio & solutions</span><h2>Des solutions numériques pensées pour le terrain.</h2><p>Découvrez les familles de projets et de solutions que SIB conçoit, intègre et accompagne. Les présentations ci-dessous décrivent nos domaines de réalisation.</p></div><div class="portfolio-grid">
 <article class="portfolio-card reveal"><div class="portfolio-visual portfolio-visual-management"><span class="portfolio-icon">▦</span><span class="portfolio-label">Gestion & organisation</span><div class="portfolio-ui"><i></i><i></i><i></i><b></b><b></b><b></b></div></div><div class="portfolio-content"><small>01 / Applications métiers</small><h3>Gestion d'entreprise & ERP</h3><p>Applications de gestion pour structurer les clients, prestations, stocks, ventes, finances et opérations quotidiennes.</p><div class="portfolio-tags"><span>ERP</span><span>Gestion</span><span>Automatisation</span></div><a class="more" href="#contact">Étudier votre projet →</a></div></article>
 <article class="portfolio-card reveal"><div class="portfolio-visual portfolio-visual-network"><span class="portfolio-icon">⌁</span><span class="portfolio-label">Connectivité & sécurité</span><div class="network-visual"><i></i><i></i><i></i><i></i><b></b></div></div><div class="portfolio-content"><small>02 / Infrastructure IT</small><h3>Réseaux, Wi-Fi & vidéosurveillance</h3><p>Conception d'infrastructures réseau, couverture Wi-Fi, solutions MikroTik, Hotspot et dispositifs de vidéosurveillance.</p><div class="portfolio-tags"><span>MikroTik</span><span>Wi-Fi</span><span>CCTV</span></div><a class="more" href="#contact">Parler à un technicien →</a></div></article>
@@ -541,6 +583,20 @@ document.getElementById('year').textContent=new Date().getFullYear();
 document.querySelectorAll('.section-head,.trust-item,.about-points .point,.solution,.training-art>div,.project,.contact-item,.footer-grid>div').forEach((el,i)=>{if(!el.classList.contains('reveal'))el.classList.add('reveal');el.style.transitionDelay=(i%4)*85+'ms'});
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function bindWhatsAppForm(formId,buildMessage){
+ const form=document.getElementById(formId);
+ if(!form)return;
+ form.addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!form.reportValidity())return;
+  const data=Object.fromEntries(new FormData(form).entries());
+  const message=buildMessage(data);
+  window.open('https://wa.me/224624895298?text='+encodeURIComponent(message),'_blank','noopener');
+ });
+}
+bindWhatsAppForm('quoteForm',d=>'Bonjour SIB, je souhaite obtenir un devis.\\n\\nNom : '+d.name+'\\nTéléphone : '+d.phone+'\\nE-mail : '+(d.email||'Non renseigné')+'\\nOrganisation : '+(d.organization||'Non renseignée')+'\\nPrestation : '+d.service+'\\nDescription : '+d.details);
+bindWhatsAppForm('enrollForm',d=>'Bonjour SIB, je souhaite demander une inscription à une formation.\\n\\nNom : '+d.name+'\\nTéléphone : '+d.phone+'\\nE-mail : '+(d.email||'Non renseigné')+'\\nFormation : '+d.course+'\\nNiveau : '+(d.level||'Non renseigné')+'\\nDisponibilité : '+(d.availability||'À convenir')+'\\nPrécisions : '+(d.message||'Aucune'));
 document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);const msg='Bonjour SIB,%0A%0AJe souhaite vous contacter.%0A%0ANom : '+encodeURIComponent(f.get('name'))+'%0ATéléphone : '+encodeURIComponent(f.get('phone'))+'%0AE-mail : '+encodeURIComponent(f.get('email')||'Non renseigné')+'%0ABesoin : '+encodeURIComponent(f.get('subject'))+'%0AMessage : '+encodeURIComponent(f.get('message'));window.open('https://wa.me/224624895298?text='+msg,'_blank','noopener')});
 
 /* Déploiement du motif de signal réseau dans les autres sections */
