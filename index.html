@@ -376,13 +376,32 @@
 @media(max-width:760px){.portfolio-grid{grid-template-columns:1fr}.portfolio-visual{height:165px}.portfolio-content{padding:19px}}
 @media(prefers-reduced-motion:reduce){.portfolio-card{transition:none}.portfolio-card:hover{transform:none}}
 
+
+/* Catalogue des prestations SIB */
+.catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.catalog-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px;display:flex;flex-direction:column;box-shadow:0 8px 26px rgba(7,26,54,.045);transition:transform .22s,box-shadow .22s}
+.catalog-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(7,26,54,.09)}
+.catalog-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.catalog-top small{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:800;color:var(--blue)}
+.catalog-symbol{width:39px;height:39px;display:grid;place-items:center;border-radius:10px;background:#edf4fc;color:var(--orange);font-size:21px}
+.catalog-card h3{font-size:18px;line-height:1.35;margin:0 0 12px;color:var(--navy)}
+.catalog-card ul{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:9px;flex:1}
+.catalog-card li{font-size:12px;line-height:1.55;color:var(--muted);padding-left:17px;position:relative}
+.catalog-card li:before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.catalog-card .more{font-size:12px;font-weight:800;color:var(--blue);padding-top:13px;border-top:1px solid var(--line)}
+.catalog-footer{margin-top:24px;padding:20px 22px;background:#fff;border:1px solid #e8edf4;border-radius:13px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.catalog-footer p{margin:0;max-width:650px;font-size:12px;line-height:1.7;color:var(--muted)}
+@media(max-width:900px){.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.catalog-grid{grid-template-columns:1fr}.catalog-card{padding:20px}.catalog-footer{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.catalog-card{transition:none}.catalog-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
 <div class="topline"><div class="container"><span>Votre partenaire en innovation et solutions numériques</span><span>Conakry, Guinée &nbsp;·&nbsp; <a href="mailto:contact@soritechinnov.com">contact@soritechinnov.com</a></span></div></div>
 <header class="header"><div class="container nav">
 <a class="brand" href="#accueil" aria-label="SIB accueil"><img class="sib-logo-header" src="logo-sib.jpg" alt="Logo officiel SORITECH INNOV BUSINESS"></a>
-<nav class="links" id="navlinks"><a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#services">Services</a><a href="#solutions">Solutions</a><a href="#formations">Formations</a><a href="#realisations">Réalisations</a><a href="#partenaires">Partenaires</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+<nav class="links" id="navlinks"><a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#services">Services</a><a href="#catalogue">Catalogue</a><a href="#solutions">Solutions</a><a href="#formations">Formations</a><a href="#realisations">Réalisations</a><a href="#partenaires">Partenaires</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
 <a class="btn btn-primary" href="#contact">Demander un devis ↗</a><button class="menu" id="menu" aria-label="Ouvrir le menu">☰</button>
 </div></header>
 <main>
@@ -419,6 +438,14 @@
 <article class="card reveal"><div class="iconbox">◈</div><h3>Communication & impression</h3><p>Nous réalisons vos supports de communication et vos travaux d'impression pour valoriser votre marque et vos événements.</p><ul class="service-details"><li>Conception de logos, flyers, affiches et visuels</li><li>Impression noir et couleur, scan et saisie</li><li>Cartes de visite, plastification et reliure</li><li>Flocage de maillots, T-shirts et personnalisation</li></ul><a class="more" href="#contact">Présenter votre besoin →</a></article>
 <article class="card reveal"><div class="iconbox">◎</div><h3>Conseil & prestations</h3><p>Nous vous accompagnons dans la définition, la préparation et la réalisation de vos projets informatiques et numériques.</p><ul class="service-details"><li>Étude de besoins et recommandations techniques</li><li>Assistance et accompagnement des organisations</li><li>Courtage et coordination de prestations</li><li>Devis, planification et suivi des interventions</li></ul><a class="more" href="#contact">Échanger avec SIB →</a></article>
 </div></div></section>
+<section class="section soft" id="catalogue"><div class="container"><div class="section-head center"><span class="kicker">Catalogue des prestations</span><h2>Une offre claire pour chaque besoin.</h2><p>Parcourez les prestations proposées par SIB et contactez-nous pour obtenir une proposition adaptée à votre contexte.</p></div><div class="catalog-grid">
+<article class="catalog-card reveal"><div class="catalog-top"><span class="catalog-symbol">⌘</span><small>01 · Informatique</small></div><h3>Assistance & équipements</h3><ul><li>Diagnostic et dépannage informatique</li><li>Maintenance préventive et corrective des PC</li><li>Installation de Windows et logiciels</li><li>Optimisation et sécurisation des postes</li><li>Fourniture d'ordinateurs et accessoires</li></ul><a href="#contact" class="more">Demander une prestation →</a></article>
+<article class="catalog-card reveal"><div class="catalog-top"><span class="catalog-symbol">⌁</span><small>02 · Réseaux & sécurité</small></div><h3>Infrastructure & connectivité</h3><ul><li>Installation de réseaux LAN et Wi-Fi</li><li>Configuration routeurs et MikroTik</li><li>Hotspot Wi-Fi et gestion des accès</li><li>Installation de vidéosurveillance CCTV</li><li>Configuration et assistance réseau</li></ul><a href="#contact" class="more">Demander une étude →</a></article>
+<article class="catalog-card reveal"><div class="catalog-top"><span class="catalog-symbol">▣</span><small>03 · Développement</small></div><h3>Web, mobile & logiciels</h3><ul><li>Sites vitrines et sites professionnels</li><li>Applications web et mobiles</li><li>Logiciels métiers et solutions ERP</li><li>Digitalisation des processus</li><li>Maintenance et évolution applicative</li></ul><a href="#contact" class="more">Décrire votre projet →</a></article>
+<article class="catalog-card reveal"><div class="catalog-top"><span class="catalog-symbol">✦</span><small>04 · Formation</small></div><h3>Formation professionnelle</h3><ul><li>Windows et Pack Office</li><li>Photoshop, Illustrator et CorelDRAW</li><li>InDesign et Canva</li><li>WordPress et développement Full-stack</li><li>Réseaux informatiques et MikroTik</li><li>Tap-touche</li></ul><a href="#formations" class="more">Consulter les formations →</a></article>
+<article class="catalog-card reveal"><div class="catalog-top"><span class="catalog-symbol">◈</span><small>05 · Communication</small></div><h3>Création & impression</h3><ul><li>Logos, flyers, affiches et visuels</li><li>Cartes de visite et supports imprimés</li><li>Saisie, impression et numérisation</li><li>Plastification et reliure</li><li>Flocage de maillots et T-shirts</li><li>Personnalisation et cachets</li></ul><a href="#contact" class="more">Demander un devis →</a></article>
+<article class="catalog-card reveal"><div class="catalog-top"><span class="catalog-symbol">◎</span><small>06 · Conseil & services</small></div><h3>Accompagnement de projets</h3><ul><li>Analyse des besoins et conseil technique</li><li>Assistance informatique aux organisations</li><li>Courtage et coordination de prestations</li><li>Planification et suivi d'interventions</li><li>Accompagnement à la transformation numérique</li></ul><a href="#contact" class="more">Parler à notre équipe →</a></article>
+</div><div class="catalog-footer"><p>Les tarifs dépendent de la nature, du volume et des contraintes de chaque demande. SIB établit une proposition personnalisée après échange.</p><a class="btn btn-primary" href="#contact">Obtenir un devis personnalisé ↗</a></div></div></section>
 <section class="section" id="solutions"><div class="container"><div class="section-head"><span class="kicker">Solutions numériques</span><h2>Des outils pour simplifier votre quotidien.</h2><p>Nous concevons et intégrons des solutions digitales pour mieux organiser vos opérations et accélérer votre développement.</p></div><div class="solutions">
 <div class="solution reveal"><div class="iconbox">⌘</div><div><h3>Sites web & applications</h3><p>Présence en ligne, plateformes métier et applications adaptées à vos utilisateurs.</p></div></div>
 <div class="solution reveal"><div class="iconbox">▤</div><div><h3>ERP de gestion</h3><p>Solutions de gestion scolaire et de gestion d'entreprise pour structurer vos opérations.</p></div></div>
