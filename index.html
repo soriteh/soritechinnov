@@ -413,6 +413,21 @@
 @media(max-width:760px){.request-grid{grid-template-columns:1fr}.request-card{padding:21px}}
 @media(max-width:430px){.request-card .form-grid{grid-template-columns:1fr}.request-card .field.full{grid-column:auto}}
 
+
+/* Fenêtre modale de demande de devis */
+.quote-modal{width:min(680px,calc(100% - 28px));max-width:680px;max-height:min(90vh,900px);padding:0;border:0;border-radius:18px;background:#fff;color:var(--navy);box-shadow:0 24px 80px #071a3670;overflow:auto}
+.quote-modal::backdrop{background:rgba(4,16,35,.72);backdrop-filter:blur(5px)}
+.quote-modal-head{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 24px 16px;background:#fff;border-bottom:1px solid #e8edf4}
+.quote-modal-head h2{font:800 22px Manrope,sans-serif;margin:0 0 5px;color:var(--navy)}
+.quote-modal-head p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}
+.quote-modal-close{width:38px;height:38px;flex:none;border:1px solid #dce4ef;border-radius:50%;background:#fff;color:var(--navy);font-size:23px;line-height:1;cursor:pointer}
+.quote-modal-close:hover{background:#f2f6fb;border-color:var(--blue);color:var(--blue)}
+.quote-modal-content{padding:20px 24px 24px}
+.quote-modal #quoteForm{display:block;padding:0;border:0;box-shadow:none;background:#fff}
+.quote-modal #quoteForm>h3,.quote-modal #quoteForm>p:first-of-type{display:none}
+.quote-modal #quoteForm .form-anchor{display:none}
+.quote-modal .request-card .btn{width:100%;min-height:50px}
+@media(max-width:600px){.quote-modal{width:calc(100% - 18px);max-height:94vh;border-radius:14px}.quote-modal-head{padding:18px 17px 13px}.quote-modal-content{padding:16px 17px 20px}.quote-modal-head h2{font-size:19px}}
 </style>
 </head>
 <body>
@@ -576,6 +591,15 @@ document.querySelectorAll(".result-number").forEach(el=>countObserver.observe(el
 })();
 
 </script>
+
+<dialog class="quote-modal" id="quoteModal" aria-labelledby="quoteModalTitle">
+ <div class="quote-modal-head">
+  <div><h2 id="quoteModalTitle">Demander un devis</h2><p>Décrivez votre besoin. Notre équipe vous répondra rapidement.</p></div>
+  <button class="quote-modal-close" type="button" aria-label="Fermer la fenêtre de devis">×</button>
+ </div>
+ <div class="quote-modal-content" id="quoteModalContent"></div>
+</dialog>
+
 <script>
 const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');if(menu&&nav){menu.setAttribute('aria-expanded','false');menu.addEventListener('click',()=>{const isOpen=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(isOpen));menu.setAttribute('aria-label',isOpen?'Fermer le menu':'Ouvrir le menu');menu.textContent=isOpen?'✕':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Ouvrir le menu');menu.textContent='☰'}));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Ouvrir le menu');menu.textContent='☰';menu.focus()}})}
 document.getElementById('year').textContent=new Date().getFullYear();
@@ -595,6 +619,34 @@ function bindWhatsAppForm(formId,buildMessage){
   window.open('https://wa.me/224624895298?text='+encodeURIComponent(message),'_blank','noopener');
  });
 }
+
+/* Ouverture du formulaire de devis dans une fenêtre modale */
+(()=>{
+ const modal=document.getElementById('quoteModal');
+ const content=document.getElementById('quoteModalContent');
+ const quoteForm=document.getElementById('quoteForm');
+ if(!modal||!content||!quoteForm)return;
+ content.appendChild(quoteForm);
+ quoteForm.classList.remove('reveal','visible');
+ const openModal=()=>{
+  if(!modal.open)modal.showModal();
+  const firstField=quoteForm.querySelector('input,select,textarea');
+  if(firstField)firstField.focus({preventScroll:true});
+ };
+ document.querySelectorAll('a[href="#devis"]').forEach(link=>{
+  link.addEventListener('click',event=>{
+   event.preventDefault();
+   openModal();
+  });
+ });
+ modal.querySelector('.quote-modal-close').addEventListener('click',()=>modal.close());
+ modal.addEventListener('click',event=>{
+  if(event.target===modal)modal.close();
+ });
+ quoteForm.addEventListener('submit',()=>{
+  if(quoteForm.checkValidity())window.setTimeout(()=>modal.close(),250);
+ });
+})();
 bindWhatsAppForm('quoteForm',d=>'Bonjour SIB, je souhaite obtenir un devis.\\n\\nNom : '+d.name+'\\nTéléphone : '+d.phone+'\\nE-mail : '+(d.email||'Non renseigné')+'\\nOrganisation : '+(d.organization||'Non renseignée')+'\\nPrestation : '+d.service+'\\nDescription : '+d.details);
 bindWhatsAppForm('enrollForm',d=>'Bonjour SIB, je souhaite demander une inscription à une formation.\\n\\nNom : '+d.name+'\\nTéléphone : '+d.phone+'\\nE-mail : '+(d.email||'Non renseigné')+'\\nFormation : '+d.course+'\\nNiveau : '+(d.level||'Non renseigné')+'\\nDisponibilité : '+(d.availability||'À convenir')+'\\nPrécisions : '+(d.message||'Aucune'));
 document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);const msg='Bonjour SIB,%0A%0AJe souhaite vous contacter.%0A%0ANom : '+encodeURIComponent(f.get('name'))+'%0ATéléphone : '+encodeURIComponent(f.get('phone'))+'%0AE-mail : '+encodeURIComponent(f.get('email')||'Non renseigné')+'%0ABesoin : '+encodeURIComponent(f.get('subject'))+'%0AMessage : '+encodeURIComponent(f.get('message'));window.open('https://wa.me/224624895298?text='+msg,'_blank','noopener')});
