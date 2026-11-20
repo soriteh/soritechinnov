@@ -428,6 +428,16 @@
 .quote-modal #quoteForm .form-anchor{display:none}
 .quote-modal .request-card .btn{width:100%;min-height:50px}
 @media(max-width:600px){.quote-modal{width:calc(100% - 18px);max-height:94vh;border-radius:14px}.quote-modal-head{padding:18px 17px 13px}.quote-modal-content{padding:16px 17px 20px}.quote-modal-head h2{font-size:19px}}
+
+/* Choix des démarches : devis ou inscription */
+.request-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:980px;margin:0 auto}
+.request-action-card{display:flex;flex-direction:column;align-items:flex-start;gap:15px;min-height:250px;padding:28px;border:1px solid #e1e9f3;border-radius:17px;background:#fff;box-shadow:0 12px 35px rgba(7,26,54,.06);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.request-action-card:hover{transform:translateY(-4px);border-color:#b9d2ef;box-shadow:0 18px 42px rgba(7,26,54,.10)}
+.request-action-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:rgba(0,87,185,.09);color:var(--blue);font-size:25px;font-weight:800}
+.request-action-card h3{margin:0 0 7px;font:800 19px Manrope,sans-serif;color:var(--navy)}
+.request-action-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+.request-action-card .btn{margin-top:auto}
+@media(max-width:680px){.request-actions{grid-template-columns:1fr;gap:14px}.request-action-card{min-height:220px;padding:22px}}
 </style>
 </head>
 <body>
@@ -488,8 +498,12 @@
 <section class="section soft" id="formations"><div class="container"><div class="training reveal"><div><span class="eyebrow">Développez vos compétences</span><h2>Apprenez. Pratiquez. Progressez.</h2><p>SIB propose des formations orientées pratique pour renforcer vos compétences numériques et professionnelles.</p><div class="tags"><span class="tag">Windows & Pack Office</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">CorelDRAW</span><span class="tag">InDesign</span><span class="tag">Canva</span><span class="tag">WordPress</span><span class="tag">Développement Full-stack</span><span class="tag">MikroTik</span><span class="tag">Tap-touche</span></div><a class="btn btn-primary" href="#inscription">S’inscrire à une formation ↗</a></div><div class="training-art"><div><strong>01</strong> Bureautique & productivité</div><div><strong>02</strong> Design graphique</div><div><strong>03</strong> Web & développement</div><div><strong>04</strong> Réseaux & systèmes</div></div></div></div></section>
 
 <section class="section soft" id="demandes"><div class="container">
-<div class="section-head center request-heading"><span class="kicker">Vos démarches en ligne</span><h2>Concrétisons votre besoin.</h2><p>Transmettez votre demande de devis ou votre souhait d'inscription. Votre message sera préparé dans WhatsApp pour être envoyé à notre équipe.</p></div>
-<div class="request-grid">
+<div class="section-head center request-heading"><span class="kicker">Parlons de votre projet</span><h2>Quelle est votre prochaine étape ?</h2><p>Vous avez un projet à réaliser ou souhaitez développer vos compétences ? Choisissez votre démarche : notre équipe SIB vous accompagnera pour la suite.</p></div>
+<div class="request-actions">
+ <article class="request-action-card"><span class="request-action-icon" aria-hidden="true">↗</span><div><h3>Vous avez un projet ?</h3><p>Présentez votre besoin et recevez une proposition adaptée à votre activité.</p></div><a class="btn btn-primary" href="#devis">Demander un devis ↗</a></article>
+ <article class="request-action-card"><span class="request-action-icon" aria-hidden="true">✦</span><div><h3>Vous souhaitez vous former ?</h3><p>Choisissez votre formation et indiquez vos disponibilités pour être recontacté.</p></div><a class="btn btn-primary" href="#inscription">S’inscrire à une formation ↗</a></article>
+</div>
+<div class="request-grid" hidden>
 <form class="request-card reveal" id="quoteForm"><span id="devis" class="form-anchor" aria-hidden="true"></span><h3>Demander un devis</h3><p>Présentez votre besoin pour permettre à notre équipe de mieux préparer votre proposition.</p><div class="form-grid">
 <div class="field"><label for="quoteName">Nom complet *</label><input id="quoteName" name="name" required autocomplete="name" placeholder="Votre nom"></div>
 <div class="field"><label for="quotePhone">Téléphone *</label><input id="quotePhone" name="phone" required autocomplete="tel" placeholder="+224 ..."></div>
