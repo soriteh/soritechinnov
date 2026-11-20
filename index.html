@@ -410,6 +410,9 @@
 .request-card input:focus,.request-card select:focus,.request-card textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,87,185,.09)}
 .request-card .form-note{font-size:11px;line-height:1.65;color:var(--muted);margin:13px 0 0}
 .request-heading{margin-bottom:26px}
+.request-heading h2{white-space:nowrap}
+@media(max-width:560px){.request-heading h2{white-space:normal}}
+
 @media(max-width:760px){.request-grid{grid-template-columns:1fr}.request-card{padding:21px}}
 @media(max-width:430px){.request-card .form-grid{grid-template-columns:1fr}.request-card .field.full{grid-column:auto}}
 
