@@ -600,6 +600,14 @@ document.querySelectorAll(".result-number").forEach(el=>countObserver.observe(el
  <div class="quote-modal-content" id="quoteModalContent"></div>
 </dialog>
 
+<dialog class="quote-modal" id="enrollmentModal" aria-labelledby="enrollmentModalTitle">
+ <div class="quote-modal-head">
+  <div><h2 id="enrollmentModalTitle">Inscription à une formation</h2><p>Choisissez votre formation et indiquez vos disponibilités. Notre équipe vous recontactera.</p></div>
+  <button class="quote-modal-close" type="button" aria-label="Fermer la fenêtre d'inscription">×</button>
+ </div>
+ <div class="quote-modal-content" id="enrollmentModalContent"></div>
+</dialog>
+
 <script>
 const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');if(menu&&nav){menu.setAttribute('aria-expanded','false');menu.addEventListener('click',()=>{const isOpen=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(isOpen));menu.setAttribute('aria-label',isOpen?'Fermer le menu':'Ouvrir le menu');menu.textContent=isOpen?'✕':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Ouvrir le menu');menu.textContent='☰'}));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Ouvrir le menu');menu.textContent='☰';menu.focus()}})}
 document.getElementById('year').textContent=new Date().getFullYear();
@@ -620,6 +628,34 @@ function bindWhatsAppForm(formId,buildMessage){
  });
 }
 
+
+/* Ouverture du formulaire d'inscription dans une fenêtre modale */
+(()=>{
+ const modal=document.getElementById('enrollmentModal');
+ const content=document.getElementById('enrollmentModalContent');
+ const enrollForm=document.getElementById('enrollForm');
+ if(!modal||!content||!enrollForm)return;
+ content.appendChild(enrollForm);
+ enrollForm.classList.remove('reveal','visible');
+ const openModal=()=>{
+  if(!modal.open)modal.showModal();
+  const firstField=enrollForm.querySelector('input,select,textarea');
+  if(firstField)firstField.focus({preventScroll:true});
+ };
+ document.querySelectorAll('a[href="#inscription"]').forEach(link=>{
+  link.addEventListener('click',event=>{
+   event.preventDefault();
+   openModal();
+  });
+ });
+ modal.querySelector('.quote-modal-close').addEventListener('click',()=>modal.close());
+ modal.addEventListener('click',event=>{
+  if(event.target===modal)modal.close();
+ });
+ enrollForm.addEventListener('submit',()=>{
+  if(enrollForm.checkValidity())window.setTimeout(()=>modal.close(),250);
+ });
+})();
 /* Ouverture du formulaire de devis dans une fenêtre modale */
 (()=>{
  const modal=document.getElementById('quoteModal');
