@@ -460,6 +460,18 @@
 .result-icon .study-cap-icon{width:24px;height:24px}
 .trust-item b .study-cap-icon{width:17px;height:17px}
 .catalog-symbol .study-cap-icon,.portfolio-icon .study-cap-icon{width:1em;height:1em}
+
+/* Optimisation des performances : priorité à la fluidité */
+html{scroll-behavior:auto}
+.header{backdrop-filter:none!important;background:rgba(255,255,255,.98)}
+.result-card{backdrop-filter:none!important}
+.hero:after,.section:before,.section:after,.trust:before,.footer:before,.footer:after{animation:none!important;filter:none!important}
+.cyber-network,.network-signal,.network-signal-section{display:none!important}
+.net-traces path,.net-pulses circle,.signal-nodes circle,.signal-rings circle,.signal-packets circle{animation:none!important;filter:none!important}
+.partners-track{animation-duration:75s!important}
+.testimonial-invite{animation:none!important}
+*{scroll-behavior:auto!important}
+
 </style>
 </head>
 <body>
@@ -723,16 +735,7 @@ bindWhatsAppForm('quoteForm',d=>'Bonjour SIB, je souhaite obtenir un devis.\\n\\
 bindWhatsAppForm('enrollForm',d=>'Bonjour SIB, je souhaite demander une inscription à une formation.\\n\\nNom : '+d.name+'\\nTéléphone : '+d.phone+'\\nE-mail : '+(d.email||'Non renseigné')+'\\nFormation : '+d.course+'\\nNiveau : '+(d.level||'Non renseigné')+'\\nDisponibilité : '+(d.availability||'À convenir')+'\\nPrécisions : '+(d.message||'Aucune'));
 document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);const msg='Bonjour SIB,%0A%0AJe souhaite vous contacter.%0A%0ANom : '+encodeURIComponent(f.get('name'))+'%0ATéléphone : '+encodeURIComponent(f.get('phone'))+'%0AE-mail : '+encodeURIComponent(f.get('email')||'Non renseigné')+'%0ABesoin : '+encodeURIComponent(f.get('subject'))+'%0AMessage : '+encodeURIComponent(f.get('message'));window.open('https://wa.me/224624895298?text='+msg,'_blank','noopener')});
 
-/* Déploiement du motif de signal réseau dans les autres sections */
-const signalMarkup='<svg viewBox="0 0 1440 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g class="signal-lines"><path d="M-20 155H175L250 230H430L510 150H690L770 230H960L1040 150H1240L1320 230H1460"/><path d="M-20 465H130L220 375H390L480 465H650L740 375H910L1000 465H1180L1270 375H1460"/><path class="orange-line" d="M180 -20V115L250 185V230M510 150V65L600 -20M770 230V325L740 375M1040 150V65L1130 -20M1000 465V560L1110 680"/></g><g class="signal-nodes"><circle cx="250" cy="230" r="4"/><circle cx="510" cy="150" r="4"/><circle cx="770" cy="230" r="4"/><circle cx="1040" cy="150" r="4"/><circle cx="220" cy="375" r="4"/><circle cx="740" cy="375" r="4"/><circle cx="1000" cy="465" r="4"/><circle cx="1270" cy="375" r="4"/></g><g class="signal-rings"><circle cx="250" cy="230" r="9"/><circle cx="770" cy="230" r="9"/><circle cx="1000" cy="465" r="9"/><circle cx="1270" cy="375" r="9"/></g><g class="signal-packets"><circle class="p1" cx="0" cy="0" r="3.5"/><circle class="p2" cx="0" cy="0" r="3.5"/><circle class="p3" cx="0" cy="0" r="3"/></g></svg>';
-document.querySelectorAll('main .section,main .trust,footer.footer').forEach((section,index)=>{
- if(section.querySelector(':scope > .network-signal'))return;
- const layer=document.createElement('div');
- layer.className='network-signal network-signal-section';
- layer.setAttribute('aria-hidden','true');
- layer.innerHTML=signalMarkup;
- section.insertBefore(layer,section.firstChild);
-});
+/* Effets réseau décoratifs secondaires retirés pour alléger le rendu. */
 
 </script>
 </body></html>
